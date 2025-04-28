@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
             doubleSpeed = true;
             playerAnim.SetFloat("Speed_Multiplier", 2.0f);
         }
-        else if (doubleSpeed) ;
+        else if (doubleSpeed);
         {
             doubleSpeed = false;
             playerAnim.SetFloat("Speed_Multiplier", 1.0f);

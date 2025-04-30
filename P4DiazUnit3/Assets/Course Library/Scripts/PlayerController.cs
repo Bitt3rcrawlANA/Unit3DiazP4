@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true;
     public bool doubleJumpUsed = false;
     public float doubleJumpForce;
-    public bool doubleSpeed = false;
     public bool gameOver = false;
+    public bool doubleSpeed = false;
 
     // Animation and Effects
 
@@ -28,11 +28,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
 
         playerAudio = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -55,12 +57,12 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(jump, 1.0f);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             doubleSpeed = true;
             playerAnim.SetFloat("Speed_Multiplier", 2.0f);
         }
-        else if (doubleSpeed);
+        else if (doubleSpeed)
         {
             doubleSpeed = false;
             playerAnim.SetFloat("Speed_Multiplier", 1.0f);

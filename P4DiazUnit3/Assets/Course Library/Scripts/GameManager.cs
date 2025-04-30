@@ -49,11 +49,11 @@ public class GameManager : MonoBehaviour
     {
         if(!playerCtrlScript.gameOver)
         {
-            if (playerCtrlScript.doubleSpeed)
+            if (playerCtrlScript.doubleSpeed == false)
             {
                 score += 2;
             }
-            else
+            else if (playerCtrlScript.doubleSpeed == true)
             {
                 score++;
             }

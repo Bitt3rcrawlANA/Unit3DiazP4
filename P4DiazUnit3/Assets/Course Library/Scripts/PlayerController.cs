@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(jump, 1.0f);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             doubleSpeed = true;
             playerAnim.SetFloat("Speed_Multiplier", 2.0f);
@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
             doubleSpeed = false;
             playerAnim.SetFloat("Speed_Multiplier", 1.0f);
         }
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -89,3 +90,4 @@ public class PlayerController : MonoBehaviour
     }
 
 }
+
